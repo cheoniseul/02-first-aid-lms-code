@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의사항</title>
+    <!-- 헤더 css -->
+    <link rel="stylesheet" href="../adminBaseCss/header/adminHeader.css">
+    <!-- 푸터 css -->
+    <link rel="stylesheet" href="../adminBaseCss/footer/adminFooter.css">
+    <!-- 사이드바 css -->
+    <link rel="stylesheet" href="../adminBaseCss/sidebar/adminSidebar.css">
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../adminBaseCss/adminCommon.css">
+    <!-- 문의사항 전용 -->
+    <link rel="stylesheet" href="css/adminInquiry.css">
+</head>
+<body>
+    <!-- 헤더(헤더 css) -->
+    <div id="admin_header_html"></div>
+    <!-- 사이드바(사이드바 css, 공통 js) -->
+    <div id="admin_sidebar_html"></div>
+    <main id="container">
+        <!-- 맨 위 타이틀(공통 css) -->
+        <h3 class="main_title">문의사항</h3>
+        <!-- 토탈 -->
+        <div class="admin_tot_srch_box">
+            <div class="admin_totCnt_box">
+                <p>Total : <span id="admin_tot_cnt"></span> 건</p>
+                <select id="admin_row_select">
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                </select>
+                <span>건씩 보기</span>
+            </div>
+            <!-- 카테고리 선택 -->
+            <div class="inquiry_srch_status">
+                <input type="radio" id="inquiry_all" name="inquiry_status" value="전체" checked>
+                <label for="inquiry_all">전체</label>
+                <input type="radio" id="inquiry_wait" name="inquiry_status" value="답변대기">
+                <label for="inquiry_wait">답변대기</label>
+                <input type="radio" id="inquiry_done" name="inquiry_status" value="답변완료">
+                <label for="inquiry_done">답변완료</label>
+            </div>
+            <!-- 문의사항 검색 (공통 css) -->
+            <div class="admin_srch_field">
+                <input type="text" name="inquiry_keyword" class="admin_srch_input" placeholder="문의사항 제목을 입력해 주세요.">
+                <button type="submit" class="admin_srch_icon">
+                    <img src="../adminImg/srchImg.png" alt="검색">
+                </button>
+            </div>
+        </div>
+        <!-- 문의사항 테이블 (공통 css) -->
+        <div id="admin_inquiry_box" class="admin_table_box">
+            <table id="admin_inquiry_table" class="admin_table_cont">
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">No.</th>
+                        <th style="width: 100px;">회원명(회원아이디)</th>
+                        <th style="width: 240px;">제목</th>
+                        <th style="width: 100px;">유형</th>
+                        <th style="width: 120px;">작성일</th>
+                        <th style="width: 100px;">답변상태</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- js에서 더미데이터 사용(화면 확인용) -->
+                </tbody>
+            </table>
+        </div>
+        <!-- 문의사항 페이징 버튼(공통 css,js) -->
+        <div id="pagination" class="paging_btn"></div>
+    </main>
+    <!-- 푸터(푸터 css) -->
+    <div id="admin_footer_html"></div>
+</body>
+<!-- 공통 js -->
+<script src="../adminBaseJs/adminHtml.js"></script>
+<script src="../adminBaseJs/adminCommon.js"></script>
+<!-- 문의사항 전용 js -->
+<script src="../adminUser/js/adminUser.js"></script>
+<script src="js/adminInquiry.js"></script>
+</html>

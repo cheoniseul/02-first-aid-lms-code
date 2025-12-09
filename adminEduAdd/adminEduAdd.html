@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교육 자료 등록</title>
+    <!-- 헤더 css -->
+    <link rel="stylesheet" href="../adminBaseCss/header/adminHeader.css">
+    <!-- 푸터 css -->
+    <link rel="stylesheet" href="../adminBaseCss/footer/adminFooter.css">
+    <!-- 사이드바 css -->
+    <link rel="stylesheet" href="../adminBaseCss/sidebar/adminSidebar.css">
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../adminBaseCss/adminCommon.css">
+    <!-- 자료 등록 전용 css -->
+    <!-- <link rel="stylesheet" href="css/adminEduAdd.css"> -->
+</head>
+<body>
+    <!-- 헤더(헤더 css) -->
+    <div id="admin_header_html"></div>
+    <!-- 사이드바(사이드바 css, 공통 js) -->
+    <div id="admin_sidebar_html"></div>
+    <main id="container">
+        <!-- 맨 위 타이틀 (공통 css) -->
+        <h3 class="main_title">교육자료등록</h3>
+        <!-- 등록 폼 (공통 CSS) -->
+        <div class="admin_add_cont">
+            <form id="admin_edu_add_form" class="admin_add_form" enctype="multipart/form-data">
+
+                <!-- 교육 자료명 -->
+                <div class="admin_form_group">
+                    <label for="eduTitle" class="form_label_title">교육자료명</label>
+                    <input type="text" id="eduTitle" name="eduTitle" placeholder="교육자료명을 입력하세요." required>
+                </div>
+
+                <!-- 교육 자료 분류 -->
+                <div class="admin_form_group admin_select_group">
+                    <label for="eduSelect" class="form_label_title">교육자료 분류</label>
+                    <div class="admin_select_row">
+                        <label for="eduMainSelect" class="form_label_subject">대주제 : </label>
+                        <select id="eduMainSelect" name="eduMain" class="admin_select_main" required>
+                            <option value="">- 대주제를 선택하세요 -</option>
+                            <option value="자가 응급 처치">자가 응급 처치</option>
+                            <option value="구조자 응급 처치">구조자 응급 처치</option>
+                        </select>
+
+                        <label for="eduSubSelect" class="form_label_subject">세부 주제 : </label>
+                        <select id="eduSubSelect" name="eduSub" class="admin_select_sub" required>
+                            <option value="">- 세부 주제를 선택하세요 -</option>
+                            <option value="출혈">출혈</option>
+                            <option value="기도 막힘">기도 막힘</option>
+                            <option value="심정지">심정지</option>
+                            <option value="골절">골절</option>
+                        </select>
+                    </div>
+                    <p class="form_guide">※ 대주제를 먼저 선택한 후 세부 주제를 선택하세요.</p>
+                </div>
+
+                <!-- 교육 자료 설명 -->
+                <div class="admin_form_group admin_textarea_group">
+                    <label for="eduDesc" class="form_label_title">교육자료 설명</label>
+                    <textarea id="eduDesc" name="eduDesc" class="admin_textarea"
+                        placeholder="교육자료에 대한 간단한 소개를 입력하세요." rows="5" required></textarea>
+                </div>
+
+                <!-- 교육 자료 파일 -->
+                <div class="admin_form_group edu_file_group">
+                    <label for="addEduFile" class="form_label_title">교육자료 파일</label>
+                    <input type="file" id="addEduFile" name="addEduFile" accept=".pdf" required>
+                    <p class="form_guide">※ 교육자료에 들어갈 파일을 등록하세요.</p>
+                </div>
+
+                <!-- 자료 등록, 취소 버튼 -->
+                <div class="admin_form_btns">
+                    <button type="submit" id="admin_edu_submitBtn" class="admin_submit_btn">등록</button>
+                    <button type="button" id="admin_edu_cancelBtn" class="admin_cancel_btn">취소</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <!-- 푸터(푸터 css) -->
+    <div id="admin_footer_html"></div>
+</body>
+<!-- 공통 js -->
+<script src="../adminBaseJs/adminHtml.js"></script>
+<script src="../adminBaseJs/adminCommon.js"></script>
+<!-- 자료 등록 전용 js -->
+<!-- <script src="js/adminEduAdd.js"></script> -->
+</html>

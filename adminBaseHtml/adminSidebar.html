@@ -1,0 +1,55 @@
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- 사이드바(사이드바 css, 공통 js) -->
+<div id="admin_sidebar">
+    <a href="../adminHome/adminHome.html" class="admin_home">
+        <span>DashBoard</span>
+    </a>
+    <div class="admin_sidebar_menu">
+        <ul>
+            <li class="aSidebar_sub">
+                <button type="button" class="sidebar_toggle">
+                    <div class="sidebar_item">
+                        <i class="fa-solid fa-user-group"></i>
+                        <span>회원</span>
+                    </div>
+                </button>
+                <ul class="aSidebar_sub_menu">
+                    <li><a href="../adminUser/adminUser.html">회원관리</a></li>
+                </ul>
+            </li>
+
+            <li class="aSidebar_sub">
+                <button type="button" class="sidebar_toggle">
+                    <div class="sidebar_item">
+                        <i class="fa-solid fa-table-list"></i>
+                        <span>교육</span>
+                    </div>
+                </button>
+                <ul class="aSidebar_sub_menu">
+                    <li><a href="../adminCourseList/adminCourseList.html">강의목록</a></li>
+                    <li><a href="../adminCourseAdd/adminCourseAdd.html">신규강의등록</a></li>
+                    <li><a href="../adminEdu/adminEdu.html">교육자료</a></li>
+                    <li><a href="../adminEduAdd/adminEduAdd.html">교육자료등록</a></li>
+                </ul>
+            </li>
+
+            <li class="aSidebar_sub">
+                <button type="button" class="sidebar_toggle">
+                    <div class="sidebar_item">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <span>소식센터</span>
+                    </div>
+                </button>
+                <ul class="aSidebar_sub_menu">
+                    <li><a href="../adminNotice/adminNotice.html">공지사항</a></li>
+                    <li><a href="../adminNoticeAdd/adminNoticeAdd.html">공지사항등록</a></li>
+                    <li><a href="../adminInquiry/adminInquiry.html">문의사항</a></li>
+                    <li><a href="../adminPressRelease/adminPressRelease.html">보도자료</a></li>
+                    <li><a href="../adminPressAdd/adminPressAdd.html">보도자료등록</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

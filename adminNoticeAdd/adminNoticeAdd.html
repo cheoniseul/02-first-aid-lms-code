@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 등록</title>
+    <!-- 헤더 css -->
+    <link rel="stylesheet" href="../adminBaseCss/header/adminHeader.css">
+    <!-- 푸터 css -->
+    <link rel="stylesheet" href="../adminBaseCss/footer/adminFooter.css">
+    <!-- 사이드바 css -->
+    <link rel="stylesheet" href="../adminBaseCss/sidebar/adminSidebar.css">
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../adminBaseCss/adminCommon.css">
+    <!-- 공지사항 등록 전용 -->
+    <link rel="stylesheet" href="css/adminNoticeAdd.css">
+</head>
+<body>
+    <!-- 헤더(헤더 css) -->
+    <div id="admin_header_html"></div>
+    <!-- 사이드바(사이드바 css, 공통 js) -->
+    <div id="admin_sidebar_html"></div>
+    <main id="container">
+        <!-- 맨 위 타이틀 (공통 css) -->
+        <h3 class="main_title">공지사항등록</h3>
+        <!-- 등록 폼 (공통 CSS) -->
+        <div class="admin_add_cont">
+            <form id="admin_notice_add_form" class="admin_add_form">
+
+                <!-- 공지사항 제목 -->
+                <div class="admin_form_group">
+                    <label for="noticeTitle" class="form_label_title">제목</label>
+                    <input type="text" id="noticeTitle" name="noticeTitle" placeholder="공지사항 제목을 입력하세요." required>
+                </div>
+
+                <!-- 공지사항 내용 -->
+                <div class="admin_form_group admin_textarea_group">
+                    <label for="noticeContent" class="form_label_title">내용</label>
+                    <textarea id="noticeContent" name="noticeContent" class="admin_textarea"
+                        placeholder="공지사항에 등록할 내용을 입력하세요." rows="5" required></textarea>
+                </div>
+
+                <!-- 공지사항 등록, 취소 버튼 -->
+                <div class="admin_form_btns">
+                    <button type="submit" id="admin_notice_submitBtn" class="admin_submit_btn">등록</button>
+                    <button type="button" id="admin_notice_cancelBtn" class="admin_cancel_btn">취소</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <!-- 푸터(푸터 css) -->
+    <div id="admin_footer_html"></div>
+</body>
+<!-- 공통 js -->
+<script src="../adminBaseJs/adminHtml.js"></script>
+<script src="../adminBaseJs/adminCommon.js"></script>
+<!-- 공지사항 등록 전용 js -->
+<!-- <script src="js/adminNoticeAdd.js"></script> -->
+</html>

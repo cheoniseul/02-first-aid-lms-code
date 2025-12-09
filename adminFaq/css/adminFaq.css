@@ -1,0 +1,11 @@
+/* faq 목록 테이블 js에 있음 */
+.faq_title_link {
+  font-size: 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.faq_title_link:hover {
+  text-decoration: underline;
+  color: #2b6cb0;
+}

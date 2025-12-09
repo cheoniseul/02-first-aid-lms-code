@@ -1,0 +1,513 @@
+:root {
+    --primary-color: #0076a3;
+    --dark-text: #1a1a1a;
+    --light-text: #f0f0f0;
+
+    --background-light: #f8f8f8;
+    --card-bg: #ffffff;
+    --card-dark-bg: rgba(255, 255, 255, 0.08);
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-strong: rgba(0, 0, 0, 0.15);
+    --transition-duration: 0.8s;
+    --animation-delay-base: 0.15s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--dark-text);
+    background-color: var(--background-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slide-section {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out;
+    z-index: 5;
+}
+
+.slide-section.active {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 10;
+}
+
+.left-content-area {
+    width: 60%;
+    padding: 0 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.fixed-background-image {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-image: url("/intro/images/introback.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.fixed-logo {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 250;
+}
+
+.fixed-logo img {
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+}
+
+/* ★ 기본 로고(컬러), 흰색 로고 숨기기 */
+.logo-white {
+    display: none;
+}
+
+.logo-default {
+    width: 244.27px !important;
+}
+
+
+.dot-nav {
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 250;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.3);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.dot:hover:not(.active) {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.page-indicator {
+    position: fixed;
+    top: 150px;
+    left: 120px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--dark-text);
+    z-index: 300;
+}
+
+.page-indicator .current-page {
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.page-indicator .separator {
+    width: 50px;
+    height: 2px;
+    background-color: currentColor;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.content-box h1 {
+    font-family: 'Montserrat';
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.content-box p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.content-box .btn-more {
+    font-family: 'Montserrat';
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 12px 30px;
+    width: fit-content;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.content-box .btn-more:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 5px 15px var(--shadow-light);
+}
+
+.slide-section.active h1,
+.slide-section.active p,
+.slide-section.active .btn-more {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.9s ease;
+}
+
+/* Slide2 오버레이 */
+#slide2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#slide2 .full-screen-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+#slide2 .left-content-area {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    max-width: 1200px;
+    padding: 0 50px;
+    color: var(--light-text);
+}
+
+#slide2 .content-box h1,
+#slide2 .content-box p,
+#slide2 .btn-more {
+    color: var(--light-text);
+}
+
+#slide2 .card-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#slide2 .feature-card {
+    background-color: rgba(0, 0, 0, 0.45);
+    /* 더 진한 반투명 블랙 */
+    backdrop-filter: blur(4px);
+    /* 유리 느낌 */
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+    cursor: pointer;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#slide2 .feature-card .icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#slide2 .feature-card i {
+    font-size: 2.2rem;
+    color: #fff;
+}
+
+#slide2 .feature-card h3 {
+    color: #fff;
+}
+
+#slide2 .feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px var(--shadow-strong);
+}
+
+/* Slide3 */
+
+ /* ===============================
+   Slide3 전체 레이아웃
+================================= */
+#slide3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* position: relative; */
+}
+
+#slide3 .slide_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    justify-content: center;
+    color: #fff;
+}
+
+/* 제목 */
+#slide3 h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+#slide3 p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 50px;
+}
+
+/* ===============================
+   Steps Container (큰 틀)
+================================= */
+#slide3 .steps-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    position: relative;
+}
+
+/* 가로 라인 */
+#slide3 .steps-container::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 70%; /* dot과 수평이 맞아야 함 → 필요하면 미세 조정 가능 */
+    transform: translateX(-50%);
+    width: 80%; /* dot 간 간격에 따라 조절 */
+    height: 2px;
+    background: rgba(255, 255, 255, 0.45);
+    z-index: 1;
+    height: 3.5px;
+}
+
+/* dot을 라인 위로 올림 */
+#slide3 .step-unit .dot {
+    position: relative;
+    z-index: 2;
+}
+
+#slide3 .step-unit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ===============================
+   1) 상단 이미지 4개
+================================= */
+#slide3 .step-images {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#slide3 .step-img img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+}
+
+/* 강조 */
+#slide3 .step-img.active img {
+    opacity: 1;
+    filter: brightness(1.2);
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+/* ===============================
+   2) 가운데 라인 + 점
+================================= */
+#slide3 .step-line {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    position: relative;
+    margin: 25px 0;
+}
+
+#slide3 .step-line .dot {
+    width: 16px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+/* 4개의 점 위치 정확하게 배치 */
+#slide3 .step-line .dot:nth-child(1) { left: 0%; }
+#slide3 .step-line .dot:nth-child(2) { left: 33.3%; }
+#slide3 .step-line .dot:nth-child(3) { left: 66.6%; }
+#slide3 .step-line .dot:nth-child(4) { left: 100%; }
+
+/* 강조된 점 */
+#slide3 .step-line .dot.active {
+    background: #fff;
+    transform: translate(-50%, -50%) scale(1.4);
+    transition: 0.3s;
+}
+
+/* ===============================
+   3) 하단 설명 4개
+================================= */
+#slide3 .step-desc {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#slide3 .desc-item {
+    width: 120px;
+    text-align: center;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+}
+
+/* 강조 */
+#slide3 .desc-item.active {
+    opacity: 1;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.4);
+    transition: 0.5s;
+}
+
+#slide3 {
+    color: var(--light-text);
+}
+
+#slide3 .full-screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 15;
+    transition: 0.8s;
+}
+
+#slide3.active .full-screen-overlay {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* 반응형 */
+@media(max-width:1200px) {
+    .card-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px
+    }
+
+    .left-content-area {
+        padding: 0 60px;
+    }
+}
+
+@media(max-width:768px) {
+    .card-grid-container {
+        grid-template-columns: 1fr;
+        gap: 15px
+    }
+
+    .dot-nav {
+        flex-direction: row;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .left-content-area {
+        text-align: center;
+    }
+}

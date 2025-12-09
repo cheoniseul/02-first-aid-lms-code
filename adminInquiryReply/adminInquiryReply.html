@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의사항 답변</title>
+    <!-- 헤더 css -->
+    <link rel="stylesheet" href="../adminBaseCss/header/adminHeader.css">
+    <!-- 푸터 css -->
+    <link rel="stylesheet" href="../adminBaseCss/footer/adminFooter.css">
+    <!-- 사이드바 css -->
+    <link rel="stylesheet" href="../adminBaseCss/sidebar/adminSidebar.css">
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../adminBaseCss/adminCommon.css">
+    <!-- 문의사항 답변 전용 -->
+    <link rel="stylesheet" href="css/adminInquiryReply.css">
+</head>
+
+<body>
+    <!-- 헤더(헤더 css) -->
+    <div id="admin_header_html"></div>
+    <!-- 사이드바(사이드바 css, 공통 js) -->
+    <div id="admin_sidebar_html"></div>
+    <!-- 메인 -->
+    <main id="container">
+        <!-- 맨 위 타이틀(공통 css) -->
+        <h3 class="main_title">문의사항답변</h3>
+        <section id="admin_inq_reply" class="admin_inq_wrap">
+
+            <!-- 문의 정보 -->
+            <div class="admin_inq_info_box">
+                <div class="admin_inq_info_row">
+                    <label class="admin_inq_label">회원명(아이디)</label>
+                    <p id="inqUser" class="admin_inq_info_text">김ㅇㅇ (kim01)</p>
+                </div>
+                <div class="admin_inq_info_row">
+                    <label class="admin_inq_label">유형</label>
+                    <p id="inqType" class="admin_inq_info_text">이수증 발급</p>
+                </div>
+                <div class="admin_inq_info_row">
+                    <label class="admin_inq_label">제목</label>
+                    <p id="inqTitle" class="admin_inq_info_text">수료증 발급이 안 돼요</p>
+                </div>
+                <div class="admin_inq_info_row">
+                    <label class="admin_inq_label">첨부파일</label>
+                    <div id="inqFile" class="admin_inq_info_file">첨부된 파일이 없습니다.</div>
+                </div>
+                <div class="admin_inq_info_row">
+                    <label class="admin_inq_label">내용</label>
+                    <div id="inqContent" class="admin_inq_info_content">수료증을 발급하려고 하는데 다운로드가 되지 않습니다.</div>
+                </div>
+            </div>
+
+            <!-- 답변 표시 영역 -->
+            <div id="admin_inq_reply_list" class="admin_inq_reply_list">
+                <!-- JS로 추가될 답변 -->
+            </div>
+
+            <!-- 답변 영역 -->
+            <form id="admin_inq_reply_form" class="admin_inq_form">
+                <div class="admin_inq_form_group">
+                    <label for="replyContent" class="admin_inq_label">답변 내용</label>
+                    <textarea id="replyContent" name="replyContent" class="admin_inq_textarea"
+                        placeholder="답변 내용을 입력하세요."></textarea>
+                </div>
+
+                <div class="admin_inq_btn_group">
+                    <button type="submit" id="replySubmitBtn" class="admin_inq_submit_btn">등록</button>
+                    <button type="button" id="replyCancelBtn" class="admin_inq_cancel_btn">취소</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- 푸터(푸터 css) -->
+    <div id="admin_footer_html"></div>
+</body>
+<!-- 공통 js -->
+<script src="../adminBaseJs/adminHtml.js"></script>
+<script src="../adminBaseJs/adminCommon.js"></script>
+<!-- 문의사항 답변 전용 js -->
+<SCript src="../adminInquiry/js/adminInquiry.js"></SCript>
+<script src="js/adminInquiryReply.js"></script>
+
+</html>

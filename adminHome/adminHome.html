@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지</title>
+    <!-- 헤더 css -->
+    <link rel="stylesheet" href="../adminBaseCss/header/adminHeader.css">
+    <!-- 푸터 css -->
+    <link rel="stylesheet" href="../adminBaseCss/footer/adminFooter.css">
+    <!-- 사이드바 css -->
+    <link rel="stylesheet" href="../adminBaseCss/sidebar/adminSidebar.css">
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../adminBaseCss/adminCommon.css">
+    <!-- 관리자 메인 전용 -->
+    <link rel="stylesheet" href="css/adminHome.css">
+    <!-- 통계용 스크립트 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- 헤더(헤더 css) -->
+    <div id="admin_header_html"></div>
+    <!-- 사이드바(사이드바 css, 공통 js) -->
+    <div id="admin_sidebar_html"></div>
+    <!-- 메인(공통 css) -->
+    <main id="container">
+        <!-- 맨 위 타이틀(공통 css) -->
+        <h3 class="main_title">DashBoard</h3>
+        <!-- 대시보드 -->
+        <!-- ========== 대시보드 요약 박스 영역 ========== -->
+        <div id="Dashboard_summary">
+            <a href="../adminUser/adminUser.html" class="summary_card total_users">
+                <p class="summary_title">총 회원 수</p>
+                <p class="summary_value"><span id="user_total_cnt">15</span> 명</p>
+            </a>
+
+            <a href="../adminCourseList/adminCourseList.html" class="summary_card total_courses">
+                <p class="summary_title">등록된 강의 수</p>
+                <p class="summary_value"><span id="course_total_cnt">12</span> 개</p>
+            </a>
+
+            <a href="../adminInquiry/adminInquiry.html" class="summary_card inq_unreplied">
+                <p class="summary_title">미답변 문의사항</p>
+                <p class="summary_value"><span id="inq_unreplied_cnt">8</span> 개</p>
+            </a>
+
+            <a href="../adminNotice/adminNotice.html" class="summary_card notice_total">
+                <p class="summary_title">총 공지사항 수</p>
+                <p class="summary_value"><span id="notice_total_cnt">11</span> 개</p>
+            </a>
+        </div>
+        <!-- ========== 통계 영역 (점선 그래프) ========== -->
+        <section id="dashboard_stats">
+            <a href="../adminUser/adminUser.html" class="stats_box link_card">
+                <h3 class="stats_title">회원 현황(신규 가입자)</h3>
+                <canvas id="userJoinChart"></canvas>
+            </a>
+
+            <a href="../adminCourseList/adminCourseList.html" class="stats_box link_card">
+                <h3 class="stats_title">강의별 수료율</h3>
+                <canvas id="courseCompletionChart"></canvas>
+            </a>
+        </section>
+    </main>
+    <!-- 푸터(푸터 css) -->
+    <div id="admin_footer_html"></div>
+</body>
+<!-- 공통 js -->
+<script src="../adminBaseJs/adminHtml.js"></script>
+<script src="../adminBaseJs/adminCommon.js"></script>
+<!-- 관리자 메인 전용 js -->
+<script src="js/adminHome.js"></script>
+
+</html>

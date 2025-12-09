@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교육 자료 목록</title>
+    <!-- 헤더 css -->
+    <link rel="stylesheet" href="../adminBaseCss/header/adminHeader.css">
+    <!-- 푸터 css -->
+    <link rel="stylesheet" href="../adminBaseCss/footer/adminFooter.css">
+    <!-- 사이드바 css -->
+    <link rel="stylesheet" href="../adminBaseCss/sidebar/adminSidebar.css">
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../adminBaseCss/adminCommon.css">
+    <!-- 교육 자료 목록 전용 -->
+    <link rel="stylesheet" href="css/adminEdu.css">
+</head>
+
+<body>
+    <!-- 헤더(헤더 css) -->
+    <div id="admin_header_html"></div>
+    <!-- 사이드바(사이드바 css, 공통 js) -->
+    <div id="admin_sidebar_html"></div>
+    <main id="container">
+        <!-- 맨 위 타이틀(공통 css) -->
+        <h3 class="main_title">교육자료</h3>
+        <div class="admin_tot_srch_box">
+            <div class="admin_totCnt_box">
+                <p>Total : <span id="admin_tot_cnt"></span> 건</p>
+                <select id="admin_row_select">
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                </select>
+                <span>건씩 보기</span>
+            </div>
+            <!-- 카테고리 선택 -->
+            <div class="eduList_srch_status">
+                <input type="radio" id="eduStatus_self" name="eduList_status" value="자가 응급 처치">
+                <label for="eduStatus_self">자가 응급 처치</label>
+                <input type="radio" id="eduStatus_succor" name="eduList_status" value="구조자 응급 처치">
+                <label for="eduStatus_succor">구조자 응급 처치</label>
+            </div>
+            <!-- 교육 자료 검색 (공통 css) -->
+            <div class="admin_srch_field">
+                <input type="text" name="eduList_keyword" class="admin_srch_input" placeholder="교육자료 제목을 입력해 주세요.">
+                <button type="submit" class="admin_srch_icon">
+                    <img src="../adminImg/srchImg.png" alt="검색">
+                </button>
+            </div>
+        </div>
+        <!-- 자료 목록 테이블 (공통 css) -->
+        <div id="admin_eduList_box" class="admin_table_box">
+            <table id="admin_eduList_table" class="admin_table_cont">
+                <thead>
+                    <tr>
+                        <th style="width: 70px;">No.</th>
+                        <th style="width: 200px;">제목</th>
+                        <th style="width: 200px;">내용</th>
+                        <th style="width: 150px;">첨부파일</th>
+                        <th style="width: 100px;">등록자</th>
+                        <th style="width: 110px;">등록일</th>
+                        <th style="width: 80px;">관리</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- js에서 더미데이터 사용(화면 확인용) -->
+                </tbody>
+            </table>
+        </div>
+        <!-- 자료 목록 페이징 버튼(공통 css,js) -->
+        <div id="pagination" class="paging_btn"></div>
+    </main>
+    <!-- 푸터(푸터 css) -->
+    <div id="admin_footer_html"></div>
+</body>
+<!-- 공통 js -->
+<script src="../adminBaseJs/adminHtml.js"></script>
+<script src="../adminBaseJs/adminCommon.js"></script>
+<!-- 교육 자료 목록 전용 js -->
+<script src="js/adminEdu.js"></script>
+
+</html>
