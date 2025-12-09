@@ -8,7 +8,7 @@
 ## 주요 기능 요약
 - 관리자 대시보드 통계 UI
 - 회원 · 강의 · 교육자료 CRUD
-- 게시물 등록/수정 폼
+- 게시물 등록/수정 폼 검증
 - 문의사항 답변 관리
 
 ---
@@ -22,4 +22,4 @@
 
 ## 관련 레포지토리
 - [portfolio](https://github.com/cheoniseul/portfolio)
-- [web-portfolio](https://github.com/cheoniseul/web-portfolio)
+- [웹 포트폴리오 (web-portfolio)](https://github.com/cheoniseul/web-portfolio)
