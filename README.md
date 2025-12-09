@@ -22,4 +22,4 @@
 
 ## 관련 레포지토리
 - [portfolio](https://github.com/cheoniseul/portfolio)
-- [웹 포트폴리오 (web-portfolio)](https://github.com/cheoniseul/web-portfolio)
+- [web-portfolio(코드)](https://github.com/cheoniseul/web-portfolio)
