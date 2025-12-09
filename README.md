@@ -16,7 +16,7 @@
 ## 프로젝트 개요 보기  
 자세한 프로젝트 개요 및 기능 설명은 아래 링크에서 확인할 수 있습니다.
 
-- [프로젝트 개요 (02-first-aid-lms)](https://github.com/cheoniseul/02-first-aid-lms)
+- [프로젝트 개요 (02-first-aid-lms)](https://github.com/cheoniseul/portfolio/tree/main/02-first-aid-lms)
 
 ---
 
